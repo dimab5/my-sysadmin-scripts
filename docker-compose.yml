@@ -1,0 +1,6 @@
+services:
+  monitor:
+    build: .
+    image: my-script
+    volumes:
+      - ./runtime/monitor.log:/usr/local/bin/monitor.log
