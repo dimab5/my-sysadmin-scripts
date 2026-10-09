@@ -3,7 +3,7 @@ set -euo pipefail
 
 INTERVAL=10
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-LOG_FILE="$SCRIPT_DIR/monitor.log"
+LOG_FILE="${LOG_FILE:-$SCRIPT_DIR/monitor.log}"
 
 if ! touch "$LOG_FILE"; then
     printf 'Ошибка: невозможно записывать в %s\n' "$LOG_FILE" >&2
